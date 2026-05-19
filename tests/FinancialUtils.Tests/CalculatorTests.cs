@@ -26,6 +26,46 @@ public class CalculatorTests
         Assert.Equal(7m, Calculator.Add(0m, 7m));
     }
 
+    // --- Add (int) ---
+
+    [Fact]
+    public void Add_Int_TwoPositives_ReturnsCorrectSum()
+    {
+        Assert.Equal(7, Calculator.Add(3, 4));
+    }
+
+    [Fact]
+    public void Add_Int_WithNegative_ReturnsCorrectSum()
+    {
+        Assert.Equal(1, Calculator.Add(-2, 3));
+    }
+
+    [Fact]
+    public void Add_Int_WithZero_ReturnsSameValue()
+    {
+        Assert.Equal(5, Calculator.Add(0, 5));
+    }
+
+    // --- Add (float) ---
+
+    [Fact]
+    public void Add_Float_TwoPositives_ReturnsCorrectSum()
+    {
+        Assert.Equal(5.5f, Calculator.Add(2.5f, 3.0f));
+    }
+
+    [Fact]
+    public void Add_Float_WithNegative_ReturnsCorrectSum()
+    {
+        Assert.Equal(1.5f, Calculator.Add(-1.0f, 2.5f));
+    }
+
+    [Fact]
+    public void Add_Float_WithZero_ReturnsSameValue()
+    {
+        Assert.Equal(4.2f, Calculator.Add(0f, 4.2f));
+    }
+
     // --- Subtract ---
 
     [Fact]
@@ -148,10 +188,10 @@ public class CalculatorTests
     public void NetPresentValue_CalculatesCorrectly()
     {
         // Inversión inicial -1000, flujos futuros de 400 por 3 periodos a tasa 10%
-        // NPV = -1000 + 400/1.1 + 400/1.21 + 400/1.331 ≈ -0.64
+        // NPV = -1000 + 400/1.1 + 400/1.21 + 400/1.331 ≈ -5.26
         var cashFlows = new[] { -1000m, 400m, 400m, 400m };
         var result = Calculator.NetPresentValue(0.10m, cashFlows);
-        Assert.Equal(-0.64m, result);
+        Assert.Equal(-5.26m, result);
     }
 
     [Fact]
