@@ -12,6 +12,8 @@ public static class Calculator
 
     public static int Add(int a, int b) => a + b;
 
+    public static float Add(float a, float b) => a + b;
+
     /// <summary>
     /// Resta b de a.
     /// </summary>
