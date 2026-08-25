@@ -14,7 +14,7 @@ public static class Formatter
     /// <param name="currencyCode">Código ISO 4217 (USD, MXN, CRC, etc.).</param>
     /// <param name="cultureName">Nombre del culture (default: es-MX).</param>
     /// <returns>Cadena formateada como moneda.</returns>
-    public static string FormatCurrency(decimal amount, string currencyCode = "USD", string cultureName = "es-CR")
+    public static string FormatCurrency(decimal amount, string currencyCode = "USD", string cultureName = "es-MX")
     {
         if (string.IsNullOrWhiteSpace(currencyCode))
         {
